@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JávouCar - Alertas Veiculares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <section id="login" class="screen active">
+        <div class="container">
+            <div class="logo-header">
+                <div class="welcome-icons">
+                    <svg class="car-icon" viewBox="0 0 24 24">
+                        <path d="M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z" />
+                    </svg>
+                    <i class="alert-icon">⚠️</i>
+                </div>
+                <h1 class="app-title" style="color: black;">JávouCar</h1>
+                <p class="app-subtitle">Sistema de Estacionamento</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" required placeholder="E-mail">
+                </div>
+                <div class="form-group password-group">
+                    <input type="password" id="loginSenha" required placeholder="Senha">
+                    <button type="button" class="toggle-password">👁️</button>
+                </div>
+                <button type="submit" class="primary-button">Entrar</button>
+                <p class="register-link">
+                    Não tem uma conta? <a href="#" onclick="showScreen('cadastro')">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tela de Onboarding -->
+    <section id="onboarding" class="screen">
+        <div class="container">
+            <div class="logo-header">
+                <div class="welcome-icons">
+                    <svg class="car-icon" viewBox="0 0 24 24">
+                        <path d="M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z" />
+                    </svg>
+                    <i class="alert-icon">⚠️</i>
+                </div>
+                <h1 class="app-title" style="color: black;">JávouCar</h1>
+                <p class="app-subtitle">Sistema de Estacionamento</p>
+            </div>
+            <div class="welcome-text">
+                <h1>Bem-vindo ao JávouCar</h1>
+                <p>Seu sistema de alertas veiculares inteligente, receba alertas instantâneos de forma rápida e segura</p>
+            </div>
+            <button class="primary-button" onclick="showScreen('cadastro')">Começar Agora</button>
+        </div>
+    </section>
+
+    <!-- Tela de Cadastro de Usuário -->
+    <section id="cadastro" class="screen">
+        <div class="container">
+            <h2>Criar Conta</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <input type="text" id="nome" required placeholder="Nome completo">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required placeholder="E-mail">
+                </div>
+                <div class="form-group password-group">
+                    <input type="password" id="senha" required placeholder="Senha">
+                    <button type="button" class="toggle-password">👁️</button>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirmarSenha" required placeholder="Confirmar senha">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefone" required placeholder="Telefone">
+                </div>
+                <button type="submit" class="primary-button">Criar Conta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tela de Cadastro de Veículo -->
+    <section id="cadastro-veiculo" class="screen">
+        <div class="container">
+            <h2>Cadastrar Veículo</h2>
+            <form id="vehicleForm">
+                <div class="form-group">
+                    <input type="text" id="placa" required placeholder="Placa do veículo">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="modelo" required placeholder="Modelo (ex: Honda Civic)">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="cor" required placeholder="Cor">
+                </div>
+                <div class="form-group">
+                    <select id="estado" required>
+                        <option value="">Selecione o estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                <div class="vehicle-image">
+                    🚗
+                </div>
+                <button type="submit" class="primary-button">Cadastrar Veículo</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tela de Alertas -->
+    <section id="alertas" class="screen">
+        <div class="container">
+            <div class="logo-header">
+                <div class="welcome-icons">
+                    <svg class="car-icon" viewBox="0 0 24 24">
+                        <path d="M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z" />
+                    </svg>
+                    <i class="alert-icon">⚠️</i>
+                </div>
+                <h1 class="app-title" style="color: black;">JávouCar</h1>
+                <p class="app-subtitle">Sistema de Estacionamento</p>
+            </div>
+            <div class="header-nav">
+                <h2>Enviar Alerta</h2>
+                <button class="logout-button" onclick="logout()">Sair</button>
+            </div>
+            <div class="form-group">
+                <input type="text" id="placaAlvo" required placeholder="Digite a placa do veículo alvo" maxlength="7">
+            </div>
+            <div class="quick-alerts">
+                <button class="alert-button" onclick="sendQuickAlert('Preciso sair com urgência!')">Preciso sair com urgência!</button>
+                <button class="alert-button" onclick="sendQuickAlert('Seu carro está bloqueando a saída')">Seu carro está bloqueando a saída</button>
+                <button class="alert-button" onclick="sendQuickAlert('Farol aceso!')">Farol aceso!</button>
+                <button class="alert-button" onclick="sendQuickAlert('Pneu Murcho!')">Pneu Murcho!</button>
+                <button class="alert-button" onclick="sendQuickAlert('Janela Aberta!')">Janela Aberta!</button>
+            </div>
+            <form id="alertForm">
+                <div class="form-group">
+                    <textarea id="customMessage" placeholder="Mensagem personalizada"></textarea>
+                </div>
+                <button type="submit" class="primary-button">Enviar Alerta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal de Alerta -->
+    <div class="alert-modal">
+        <div class="alert-content">
+            <i class="alert-icon">⚠️</i>
+            <div class="alert-message"></div>
+            <div class="alert-vehicle-info">
+                <div class="alert-plate"></div>
+                <div class="alert-model"></div>
+                <div class="alert-color"></div>
+            </div>
+            <div class="waiting-confirmation">Aguardando confirmação do proprietário...</div>
+            <div class="alert-actions">
+                <button class="confirm-button" onclick="confirmAlert()">Confirmar Recebimento</button>
+                <button class="close-button" onclick="closeAlert()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Recuperação de Senha -->
+    <section id="recuperacao" class="screen">
+        <div class="container">
+            <h2>Recuperar Senha</h2>
+            <form id="recuperacaoForm" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <input type="email" id="emailRecuperacao" required placeholder="Digite seu email">
+                </div>
+                <button type="button" onclick="recuperarSenha()" class="primary-button">Enviar Código</button>
+                
+                <div id="codigoVerificacao" style="display: none;">
+                    <div class="form-group" style="margin-top: 20px;">
+                        <input type="text" id="codigo" placeholder="Digite o código recebido" maxlength="6">
+                    </div>
+                    <div class="form-group password-group">
+                        <input type="password" id="novaSenha" placeholder="Nova senha">
+                        <button type="button" class="toggle-password">👁️</button>
+                    </div>
+                    <div class="form-group password-group">
+                        <input type="password" id="confirmarNovaSenha" placeholder="Confirmar nova senha">
+                        <button type="button" class="toggle-password">👁️</button>
+                    </div>
+                    <button type="button" onclick="verificarCodigo()" class="primary-button">Alterar Senha</button>
+                </div>
+                
+                <button type="button" onclick="showScreen('login')" class="secondary-button" style="margin-top: 10px;">
+                    Voltar para Login
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
